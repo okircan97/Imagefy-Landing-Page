@@ -1,0 +1,40 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { ViewTransitions } from "astro:transitions";
+
+interface LayoutProps {
+  additionalStylesheets?: string[];
+}
+const { additionalStylesheets = [] } = Astro.props as LayoutProps;
+---
+
+<html>
+  <head>
+    <!-- Global styles that apply to every page -->
+    <link rel="stylesheet" href="/styles/header_footer.css" />
+
+    <!-- Additional page-specific stylesheets -->
+    {
+      additionalStylesheets.map((stylesheet) => (
+        <link rel="stylesheet" href={stylesheet} />
+      ))
+    }
+    <style>
+      body {
+        font-family: "Open Sans", sans-serif;
+      }
+    </style>
+    <ViewTransitions />
+  </head>
+  <body>
+    <Header />
+
+    <!-- Slot for the page-specific content -->
+    <main>
+      <slot />
+    </main>
+
+    <Footer />
+  </body>
+</html>

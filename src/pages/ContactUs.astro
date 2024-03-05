@@ -1,0 +1,25 @@
+---
+// import ContactLayout from "../layouts/ContactLayout.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Contact Us" additionalStylesheets={["/styles/contact_us.css"]}>
+  <main>
+    <div class="contact-container">
+      <div class="contact-image">
+        <!-- Replace with the path to your contact image -->
+        <img src="../images/triple-face2.png" alt="Contact Us" />
+      </div>
+      <div class="contact-form">
+        <h1>Contact Us</h1>
+        <!-- Replace with your form elements -->
+        <form>
+          <input type="text" placeholder="Full Name" required />
+          <input type="email" placeholder="E-mail" required />
+          <textarea placeholder="Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </main>
+</Layout>

@@ -1,0 +1,72 @@
+---
+// Importing necessary components and functions
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+import type { CollectionEntry, CollectionKey } from "astro:content";
+
+// This function gets the static paths for blog posts
+export const getStaticPaths = async () => {
+  const industries = await getCollection("industries");
+  const paths = industries.map((industry) => {
+    return {
+      params: {
+        slug: industry.slug,
+      },
+      props: {
+        industry,
+      },
+    };
+  });
+  return paths;
+};
+
+// Type definition for the props received by the component
+type Props = {
+  industry: CollectionEntry<"industries">;
+};
+
+// Extracting the industry object from the props
+const { industry } = Astro.props;
+// Rendering the content of the post
+const { Content } = await industry.render();
+---
+
+<Layout
+  title={industry.data.title}
+  additionalStylesheets={["/styles/industries.css"]}
+>
+  <main>
+    <section class="industries-section">
+      <h1 class="not_so_big">{industry.data.title}</h1>
+      <p class="really_smol">
+        {industry.data.description}
+      </p>
+      <button>Start your free trial</button>
+      <br /><br />
+      <div class="benefits">
+        <div class="benefit-item">
+          <Image src={industry.data.image1} alt="Boost SEO" />
+          <h2>{industry.data.benefit1_title}</h2>
+          <p>
+            {industry.data.benefit1}
+          </p>
+        </div>
+        <div class="benefit-item">
+          <Image src={industry.data.image2} alt="Grow your audience" />
+          <h2>{industry.data.benefit2_title}</h2>
+          <p>
+            {industry.data.benefit2}
+          </p>
+        </div>
+        <div class="benefit-item">
+          <Image src={industry.data.image3} alt="Improve accessibility" />
+          <h2>{industry.data.benefit3_title}</h2>
+          <p>
+            {industry.data.benefit3}
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

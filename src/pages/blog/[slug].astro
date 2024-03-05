@@ -1,0 +1,52 @@
+---
+// Importing necessary components and functions
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+import type { CollectionEntry, CollectionKey } from "astro:content";
+
+// This function gets the static paths for blog posts
+export const getStaticPaths = async () => {
+  const posts = await getCollection("posts");
+  const paths = posts.map((post) => {
+    return {
+      params: {
+        slug: post.slug,
+      },
+      props: {
+        post,
+      },
+    };
+  });
+  return paths;
+};
+
+// Type definition for the props received by the component
+type Props = {
+  post: CollectionEntry<"posts">;
+};
+
+// Extracting the post object from the props
+const { post } = Astro.props;
+// Rendering the content of the post
+const { Content } = await post.render();
+---
+
+<!-- The JSX part of the component, which defines the HTML structure -->
+<Layout title={post.data.title} additionalStylesheets={["/styles/post.css"]}>
+  <main>
+    <h1 class="title">{post.data.title}</h1>
+    <br /><br />
+  </main>
+  <Image
+    class="post-image"
+    src={post.data.image}
+    width={1024}
+    height={1024 / 1.5}
+    alt={post.data.title}
+  />
+  <div>
+    <Content />
+  </div>
+  <br /><br /><br /><br /><br />
+</Layout>

@@ -1,0 +1,51 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="Industries Page"
+  additionalStylesheets={["/styles/industries.css"]}
+>
+  <main>
+    <section class="industries-section">
+      <h1 class="not_so_big">AI Generated Images for Datasets</h1>
+      <p class="really_smol">
+        Enhance your machine learning models with diverse, AI-generated facial
+        datasets. Improve accuracy, reduce bias, and protect privacy with
+        synthetic data from Imagefy
+      </p>
+      <button>Start your free trial</button>
+      <br /><br />
+      <div class="benefits">
+        <div class="benefit-item">
+          <img src="../images/Industry/nextgen.png" alt="Boost SEO" />
+          <h2>Next-Gen Training Sets</h2>
+          <p>
+            Generate diverse facial datasets for machine learning models,
+            ensuring better generalization and reduced bias.
+          </p>
+        </div>
+        <div class="benefit-item">
+          <img src="../images/Industry/privacy.png" alt="Grow your audience" />
+          <h2>Privacy-First Development</h2>
+          <p>
+            Provide synthetic faces to protect privacy when training facial
+            recognition software.
+          </p>
+        </div>
+        <div class="benefit-item">
+          <img
+            src="../images/Industry/ethics.png"
+            alt="Improve accessibility"
+          />
+          <h2>Ethical Data Creation</h2>
+          <p>
+            Streamline the creation of facial recognition systems with scalable,
+            ethically generated AI faces that bypass the need for real-world
+            data collection.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

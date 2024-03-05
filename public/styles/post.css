@@ -1,0 +1,79 @@
+/* ----------------------------------------------------------------*/
+/* ---------------------------- Global ----------------------------*/
+/* ----------------------------------------------------------------*/
+  
+html, body {
+    height: 100%; 
+    flex-direction: column;
+    
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+
+    background: rgb(45,44,50);
+    background: linear-gradient(90deg, rgba(44,51,51,1) 24%, rgba(69,165,170,1) 60%, rgba(122,176,179,1) 100%);
+
+    padding-top: 80px;
+    padding-bottom: 400px;
+}
+
+body > main {
+    margin: auto;
+}
+
+main {
+    flex: 1; /* This allows the main content to grow and fill the space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* This centers the content vertically */
+    align-items: center; /* This centers the content horizontally */
+    max-width: 800px; /* Adjust the width as necessary */
+    margin: auto;
+}
+  
+a{
+color:#E4E1F8;
+}
+  
+p{
+color:#E4E1F8;
+}
+
+h2{
+color:#E4E1F8;
+}
+
+.title{
+    color:#E4E1F8;
+    font-size: 30px;
+}
+  
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /* width: 50%; */
+}
+
+.blog-post-title-link{
+color:#E4E1F8;
+}
+
+.not_so_big{
+font-size: 50px;
+color:#E4E1F8;
+}
+
+.post-image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto 20px; /* Center the image and add space below */
+    border-radius: 15px; /* Adjust the pixel value to increase or decrease the roundness */
+  }
+
+article {
+    font-size: 1rem;
+    line-height: 1.6;
+/* Additional typography styles as necessary */
+}

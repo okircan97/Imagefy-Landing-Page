@@ -1,0 +1,170 @@
+/* ----------------------------------------------------------------*/
+/* ---------------------------- Global ----------------------------*/
+/* ----------------------------------------------------------------*/
+
+/* ul{
+    margin: 0;
+} */
+
+html, body {
+    height: 100%; 
+    /* display: flex; */
+    flex-direction: column;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+
+    background: rgb(45,44,50);
+    background: linear-gradient(90deg, rgba(45,44,50,1) 24%, rgba(46,79,79,1) 60%, rgba(19,133,138,1) 100%);
+
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+  
+/* This ensures that the main element takes the necessary space */
+body > main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* ----------------------------------------------------------------------------*/
+/* -------------------------- About Us Specific Stuff -------------------------*/
+/* ----------------------------------------------------------------------------*/
+
+/* About Us Page Specific Styles */
+.about-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  .about-intro {
+    text-align: center;
+    margin-bottom: 2rem; /* Space between intro and story sections */
+  }
+  
+  .about-title {
+    font-size: 3rem;
+    margin-bottom: 0.5em;
+    color: #333;
+  }
+  
+  .about-mission {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+  }
+  
+  .about-story {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+    background: #FFF; /* White background for the story section */
+  }
+  
+  .about-heading {
+    font-size: 2rem;
+    color: #333;
+    flex-basis: 20%; /* Adjust the width as necessary */
+    margin-right: 2rem; /* Space between heading and content */
+  }
+  
+  .about-content {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+    flex-basis: 75%; /* Adjust the width as necessary */
+  }
+  
+  /* Add media queries as needed for responsiveness */
+  @media (max-width: 768px) {
+    .about-story {
+      flex-direction: column;
+    }
+  
+    .about-heading {
+      margin-right: 0;
+      margin-bottom: 1rem;
+    }
+  }
+  .about-story-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Adjust the space between the image and text as needed */
+    margin-top: 20px; /* Space from the previous content */
+  }
+  
+  .about-story-image {
+    flex-basis: 40%; /* Adjust the width of the image container as needed */
+    text-align: center; /* Center the image if it's smaller than the container */
+  }
+  
+  .about-story-image img {
+    border: none; /* Removes any border */
+    padding: 0; /* Removes any padding */
+    margin: 0; /* Removes any margin */
+    display: block; /* Removes any extra space below the image */
+    max-width: 100%; /* Ensures the image is not bigger than its container */
+    height: auto; /* Keeps the image aspect ratio */
+  }
+  
+  .about-story-text {
+    flex-basis: 60%; /* Adjust the width of the text container as needed */
+    text-align: justify;
+    text-justify: inter-word;
+  }
+
+/* ----------------------------------------------------------------*/
+/* ----------------------------- Fonts ----------------------------*/
+/* ----------------------------------------------------------------*/
+.big{
+    font-size: 100px;
+    color:#E4E1F8;
+}
+
+.not_so_big{
+    font-size: 50px;
+    color:#E4E1F8;
+}
+
+.smol{
+    font-size: 40px;
+    color:#E4E1F8;
+    height: 100%;
+}
+.really_smol {
+    font-size: clamp(20px, 2vw, 25px); /* Adjust min, preferred, and max values as needed */
+    color: #E4E1F8;
+    /* height: 100%; */
+    max-width:100%;
+    height:auto;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+.so_f_smol {
+    font-size: clamp(15px, 2vw, 20px); /* Adjust min, preferred, and max values as needed */
+    color: #E4E1F8;
+    /* height: 100%; */
+    max-width:100%;
+    height:auto;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .about-story-content {
+      flex-direction: column;
+    }
+  
+    .about-story-image, .about-story-text {
+      flex-basis: 100%;
+    }
+  }

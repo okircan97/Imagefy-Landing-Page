@@ -1,0 +1,49 @@
+---
+import { getCollection } from "astro:content";
+const industries = await getCollection("industries");
+---
+
+<div class="top-container">
+  <ul class="header">
+    <a href="/" class="dropdown">
+      <div class="clickableDiv">
+        <img class="logo" src="../images/logo.png" alt="logo-img" />
+        <span class="not_so_big">Imagefy</span>
+      </div>
+    </a>
+    <li class="spacer"></li>
+    <!-- Dropdown for Services -->
+    <div class="dropdown">
+      <button class="dropbtn">Services</button>
+      <div class="dropdown-content">
+        <a href="#middle-container-2">Face Generation</a>
+        <a href="#">Human Generation</a>
+      </div>
+    </div>
+    <!-- Dropdown for Industries -->
+    <div class="dropdown">
+      <button class="dropbtn">Industries</button>
+      <div class="dropdown-content">
+        {
+          industries.map((industries) => (
+            <a href={`/industries/${industries.slug}`}>
+              {industries.data.title}
+            </a>
+          ))
+        }
+      </div>
+    </div>
+    <!-- Dropdown for Company -->
+    <div class="dropdown">
+      <button class="dropbtn">Company</button>
+      <div class="dropdown-content">
+        <a href="/AboutUs">About Us</a>
+        <a href="/ContactUs">Contact Us</a>
+      </div>
+    </div>
+    <!-- Other dropdowns -->
+    <div class="dropdown">
+      <button class="dropbtn">ImagefyPro</button>
+    </div>
+  </ul>
+</div>

@@ -1,0 +1,148 @@
+.top-container ul{
+    display: flex;
+    justify-content: center;  
+    list-style: none; /* This removes the bullet points from all list items */
+}
+
+.spacer {
+width: 200px; /* Or whatever space you want */
+flex-shrink: 0; /* Prevent flexbox from shrinking it */
+}
+
+/* ----------------------------------------------------------------*/
+/* ------------------------- Top Container ------------------------*/
+/* ----------------------------------------------------------------*/
+.top-container {
+    /* display: flex; */
+    align-items: center; /* This will vertically center all children within the container */
+    position: fixed;
+    width: 100%;
+    background-color: #2D2C32;
+    text-align: center;
+    top: 0;
+    min-height: 50px;
+  }
+.bottom-container{
+    position: fixed;
+    width: 100%; /* Or use vw units */
+    background-color: #2D2C32;
+    text-align: center;
+    padding: 15px;
+    /* margin-top: auto;  */
+    bottom: 0;
+}
+
+.logo{
+    border-radius: 100%;
+    width: 75px;
+}
+
+.top-stuff{
+    display: inline-block;
+    margin-inline: 20px;
+}
+
+.top-link{
+    text-decoration:none;
+    color:#E4E1F8;
+}
+
+.top-link, .top-link:visited, .top-link:hover, .top-link:active, .top-link:focus {
+    text-decoration: none;
+    color: #E4E1F8;
+}
+
+.linkWrapper {
+    display: block;
+    width: 100%;
+}
+
+.clickableDiv {
+    display: flex;
+    align-items: center; /* Ensure that items within clickableDiv are also centered */
+    gap: 20px; /* Maintain a gap between items */
+    cursor: pointer;
+    position: relative;
+  }
+
+.clickableDiv::after {
+    content: ''; /* Required for pseudo-elements */
+    display: block;
+    width: 200px; /* This will be the width of your gap */
+    position: absolute;
+    right: 0; /* Position the pseudo-element at the right edge of clickableDiv */
+    top: 0; /* Align the top of the pseudo-element with clickableDiv */
+    bottom: 0; /* Align the bottom of the pseudo-element with clickableDiv */
+}
+
+.logo {
+border-radius: 100%;
+width: 75px; /* Set the width of the logo */
+/* Remove any margins that may affect alignment */
+}
+
+/* ----------------------------------------------------------------*/
+/* ---------------------------- Dropdown ---------------------------*/
+/* ----------------------------------------------------------------*/
+/* Dropdown Button */
+.dropbtn {
+    background-color: transparent;
+    color: white;
+    padding: 16px;
+    font-size: 20px;
+    border: none;
+    border-radius:38px;
+    font-family: 'Open Sans', sans-serif;
+    text-decoration:none
+}
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    /*This is how it was previously.*/
+
+    /* position: relative;
+    display: inline-block; 
+    text-decoration:none*/
+
+    position: relative;
+    display: flex; /* Use flexbox instead of inline-block */
+    align-items: center; /* Align the dropdown button vertically */
+    text-decoration:none
+}
+
+.dropdown_bottom {
+    position: relative;
+    display: inline-block;
+    text-decoration:none
+}
+  
+/* Dropdown Content (Hidden by Default) */
+/* Style for the dropdown content */
+.dropdown-content {
+    display: none; /* Hide the dropdown content by default */
+    position: absolute;
+    background-color: #f1f1f1;
+    border-radius: 20px;
+    min-width: 160px; /* Adjust the width as needed */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    left: 50%; /* Position the left edge of the dropdown content at the middle of the dropdown button */
+    transform: translateX(-50%); /* Shift the dropdown content to the left by half its width to center it */
+    top: 100%; /* Position the dropdown content just below the dropdown button */
+  }
+  
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+  
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;border-radius:20px;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #4b4b4d;}

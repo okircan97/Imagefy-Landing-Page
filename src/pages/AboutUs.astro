@@ -1,0 +1,54 @@
+---
+// import AboutLayout from "../layouts/AboutUsLayout.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="About Us" additionalStylesheets={["/styles/about_us.css"]}>
+  <main class="about-main">
+    <section class="about-intro">
+      <h1 class="not_so_big">About Us</h1>
+      <p class="really_smol">
+        Welcome to the visionary world of Imagefy, where a dedicated quartet of
+        technologists and strategists are reimagining the realm of AI-generated
+        imagery. Our team, a blend of expertise in computer science, machine
+        learning, graphic design, and digital marketing, is united by a singular
+        ambition: to craft a web application that transcends being a mere tool
+        and emerges as a boundless canvas for creativity.
+      </p>
+    </section>
+    <section class="about-story-content">
+      <div class="about-story-text">
+        <h2 class="really_smol">Our Story</h2>
+        <p class="so_f_smol">
+          Baris, Haluk, and Oguz are the technological triumvirate behind
+          Imagefy's core. Baris, with his deep dive into the algorithms that
+          drive our AI, ensures that Imagefy is both potent and swift,
+          delivering high-fidelity images with the grace of a painter's brush.
+          Oguz, the empathic force in our UX design, is dedicated to making
+          Imagefy's powerhouse capabilities accessible and user-friendly,
+          allowing for seamless creation that sparks joy and innovation. Haluk,
+          has mastered the unsung art of backend development. His work is the
+          backbone of Imagefy, where he meticulously crafts the infrastructure
+          that supports the seamless functionality of our AI.
+        </p>
+        <p class="so_f_smol">
+          But the magic doesn't end with creation. Hasan, the fourth cornerstone
+          of our ensemble, weaves the output of our collective efforts into the
+          vast tapestry of the digital marketplace. As our SEO-marketing
+          maestro, Hasan's acumen amplifies Imagefy's presence in the digital
+          domain. His skillful strategies and mastery of market dynamics ensure
+          that Imagefy's groundbreaking application captivates the attention of
+          creators worldwide.
+        </p>
+        <p class="so_f_smol">
+          Together, we are not just a team but a symphony of skills harmonizing
+          to introduce Imagefy to the world. We are the faces behind the faces.
+        </p>
+      </div>
+      <div class="about-story-image">
+        <!-- Replace with your image path -->
+        <img src="../images/triple-face3.png" alt="Our Team" />
+      </div>
+    </section>
+  </main>
+</Layout>
