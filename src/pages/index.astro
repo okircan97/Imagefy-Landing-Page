@@ -16,8 +16,15 @@ import Layout from "../layouts/Layout.astro";
             >is a web application that provides photos generated completely by AI.
             You can search our gallery to see example images.</span
           >
-          <br><br><br><br><br>
+          <br><br><br><br><br><br><br>
+          
+          <!-- Search Bar -->
+          <div class="custom_input">
+            <svg xmlns="http://www.w3.org/2000/svg" class="svg_icon bi-search" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path></svg>
+            <input class="input" type="text" placeholder="Placeholder Text">
+          </div>
 
+          <br><br><br><br><br><br>
 
           <!-- Carousel Section -->
           <div class="carousel">
@@ -297,9 +304,50 @@ import Layout from "../layouts/Layout.astro";
   #next {
     right: 0; /* Align to the right end of the carousel */
   }
+
+  /* Search Bar */
+  .custom_input {
+	display: flex;
+	align-items: center;
+	position: relative;
+	max-width: 100%;
+  }
+
+  .input {
+    font-size: 18px;
+    padding: 5px 10px;
+    width: 100%;
+    padding-left: 35px;
+    outline: none;
+    background: #FFFFFF;
+    color: #000000;
+    border: 1px solid #C4D1EB;
+    border-radius: 5px;
+    box-shadow: 3px 3px 2px 0px #E2E2E2;
+    transition: .3s ease;
+  }
+
+  .input:focus {
+    background: #F2F2F2;
+    border: 1px solid #5A7EC7;
+    border-radius: 10px;
+  }
+
+  .input::placeholder {
+    color: #DDDDDD;
+  }
+
+  .svg_icon {
+    position: absolute;
+    left: 10px;
+    fill: #4660DC;
+    width: 18px;
+    height: 18px;
+  }
 </style>
 
 <script>
+  // Carousel stuff
   document.addEventListener('DOMContentLoaded', function () {
     let items = Array.from(document.querySelectorAll('.carousel .item')).map(item => item as HTMLElement);
     // let next = document.getElementById('next');
@@ -370,5 +418,49 @@ import Layout from "../layouts/Layout.astro";
     // Set the interval to automatically move to the next slide every 2000 milliseconds (2 seconds)
     setInterval(moveToNextSlide, 2000);
   });
+
+  // Search bar stuff
+  document.addEventListener('DOMContentLoaded', function () {
+  const phrases = [
+    'Discover AI Art',
+    'Explore Galleries',
+    'Find Unique Images'
+  ]; // Add more phrases as needed
+
+  let currentPhraseIndex = 0;
+  const typingDelay = 100; // Milliseconds
+  const eraseDelay = 50; // Milliseconds
+  const wordsDelay = 2000; // Milliseconds before typing next phrase
+  const searchInput = document.querySelector('.input') as HTMLInputElement;
+
+  function typePhrase(phrase: string, charIndex: number): void {
+    if (charIndex < phrase.length) {
+      setTimeout(() => {
+        searchInput.value += phrase.charAt(charIndex);
+        typePhrase(phrase, charIndex + 1);
+      }, typingDelay);
+    } else {
+      setTimeout(erasePhrase, wordsDelay); // Wait before starting to erase text
+    }
+  }
+
+  function erasePhrase(): void {
+    let phrase = searchInput.value;
+    if (phrase.length > 0) {
+      setTimeout(() => {
+        searchInput.value = phrase.substring(0, phrase.length - 1);
+        erasePhrase();
+      }, eraseDelay);
+    } else {
+      currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+      setTimeout(() => typePhrase(phrases[currentPhraseIndex], 0), typingDelay);
+    }
+  }
+
+  // Start the typing effect with the first phrase
+  if (searchInput) {
+    typePhrase(phrases[currentPhraseIndex], 0);
+  }
+});
 
 </script>
