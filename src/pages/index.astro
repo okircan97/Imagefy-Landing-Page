@@ -4,25 +4,133 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="Main Page" additionalStylesheets={["/styles/styles.css"]}>
   <main>
+
     <!-- IntroSection -->
     <div id="middle-container-1-outer" class="middle-container-1-outer">
-      <div class="middle-container-1-inner">
+      <div class="middle-container-1-inner1">
+        <div class="middle-container-1-inner">
+          <br /><br /><br />
+          <span class="big">Imagefy</span>
+          <br /><br /><br />
+          <span class="not_so_big"
+            >is a web application that provides photos generated completely by AI.
+            You can search our gallery to see example images.</span
+          >
+          <br><br><br><br><br>
+
+
+          <!-- Carousel Section -->
+          <div class="carousel">
+            <div class="carousel-items">
+              <div class="item">
+                <img
+                  class="right-img"
+                  src="../images/1.png"
+                  alt="arabic_woman01-img"
+                />
+              </div>
+              <div class="item">
+                  <img
+                    class="right-img"
+                    src="../images/2.png"
+                    alt="arabic_woman01-img"
+                  />            
+              </div>
+              <div class="item">
+                  <img
+                    class="right-img"
+                    src="../images/3.png"
+                    alt="arabic_woman01-img"
+                  />            
+              </div>
+              <div class="item">
+                <img
+                  class="right-img"
+                  src="../images/4.png"
+                  alt="arabic_woman01-img"
+                />            
+              </div>
+              <div class="item">
+                <img
+                  class="right-img"
+                  src="../images/5.png"
+                  alt="arabic_woman01-img"
+                />            
+              </div>
+              <div class="item">
+                <img
+                  class="right-img"
+                  src="../images/6.png"
+                  alt="arabic_woman01-img"
+                />            
+              </div>
+              <div class="item">
+                <img
+                  class="right-img"
+                  src="../images/7.png"
+                  alt="arabic_woman01-img"
+                />            
+              </div>
+              <div class="item">
+                <img
+                  class="right-img"
+                  src="../images/8.png"
+                  alt="arabic_woman01-img"
+                />            
+              </div>
+              <div class="item">
+                <img
+                  class="right-img"
+                  src="../images/9.png"
+                  alt="arabic_woman01-img"
+                />            
+              </div>
+              <div class="item">
+                <img
+                  class="right-img"
+                  src="../images/11.png"
+                  alt="arabic_woman01-img"
+                />            
+              </div>
+              <div class="item">
+                <img
+                  class="right-img"
+                  src="../images/12.png"
+                  alt="arabic_woman01-img"
+                />            
+              </div>
+              <div class="item">
+                <img
+                  class="right-img"
+                  src="../images/13.png"
+                  alt="arabic_woman01-img"
+                />            
+              </div>
+              <div class="item">
+                <img
+                  class="right-img"
+                  src="../images/14.png"
+                  alt="arabic_woman01-img"
+                />            
+              </div>
+            </div>
+            
+            <!-- <button id="next">Forward</button>  
+            <button id="prev">Back</button> -->
+          </div>
         <br /><br /><br />
-        <span class="big">Imagefy</span>
-        <br /><br /><br />
-        <span class="not_so_big"
-          >is a web application that provides photos generated completely by AI.
-          You can search our gallery to see example images.</span
-        >
-        <br /><br /><br />
+  
+        <a href="/signup">
+          <button class="btn-try">
+            <h1 class="sign-in">Get Started!</h1>
+          </button>
+        </a>
+        <br /><br /><br /><br /><br /><br />
+        <hr>
       </div>
-      <a href="/signup">
-        <button class="btn-try">
-          <h1 class="sign-in">Get Started!</h1>
-        </button>
-      </a>
-      <br /><br /><br /><hr />
-    </div>
+      </div>
+      
+      
 
     <!-- ImageSection -->
     <div id="middle-container-2" class="middle-container-2">
@@ -52,11 +160,10 @@ import Layout from "../layouts/Layout.astro";
         />
       </div>
     </div>
-    <hr />
 
     <!-- FeatureSection -->
     <div id="middle-container-3" class="middle-container-3">
-      <br /><br /><br /><hr />
+      <br /><br /><br />
       <div class="empty-2"></div>
       <div class="container-3-1">
         <br /><br />
@@ -100,11 +207,11 @@ import Layout from "../layouts/Layout.astro";
       </div>
       <div class="empty-2"></div>
     </div>
-    <hr />
+
 
     <!-- ExportSection -->
     <div id="middle-container-4" class="middle-container-4">
-      <br /><br /><br /><hr />
+      <br /><br /><br />
       <div class="empty-2"></div>
       <div class="container-4-1">
         <br /><br />
@@ -141,7 +248,127 @@ import Layout from "../layouts/Layout.astro";
       </div>
       <div class="empty-2"></div>
     </div>
-
-    <hr />
   </main>
 </Layout>
+
+<style>
+  .carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* overflow: hidden; */
+  }
+
+  .carousel-items {
+    position: relative;
+    width: 100%;
+    height: 500px;
+  }
+
+  .item {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    text-align: justify;
+    background: rgba(1,1,1,0.7);
+    /* background: #2c3333; */
+    border-radius: 10px;
+    padding: 20px;
+    transition: 0.5s;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the item */
+  }
+
+  #next, #prev {
+    position: absolute;
+    top: 50%; /* Align vertically to the middle of the carousel */
+    z-index: 2;
+    cursor: pointer; /* Change cursor to pointer when hovering over the button */
+  }
+
+  #prev {
+    left: 0; /* Align to the left end of the carousel */
+  }
+
+  #next {
+    right: 0; /* Align to the right end of the carousel */
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    let items = Array.from(document.querySelectorAll('.carousel .item')).map(item => item as HTMLElement);
+    // let next = document.getElementById('next');
+    // let prev = document.getElementById('prev');
+
+    // if (!next || !prev) {
+    //   console.error('Carousel controls not found!');
+    //   return;
+    // }
+
+    let active = 3; // assuming you have at least 4 items and want to start at the fourth
+
+    function loadShow() {
+      // Hide all items initially
+      items.forEach(item => {
+        item.style.transform = 'translateX(-50%) scale(0.5)'; // Scale down and hide
+        item.style.opacity = '0';
+        item.style.zIndex = '0';
+      });
+
+      // Calculate index positions for the surrounding items
+      const totalItems = items.length;
+      const prevIndex1 = (active - 1 + totalItems) % totalItems;
+      const prevIndex2 = (active - 2 + totalItems) % totalItems;
+      const nextIndex1 = (active + 1) % totalItems;
+      const nextIndex2 = (active + 2) % totalItems;
+
+      // Function to set styles for items (helper function)
+      function setItemStyle(item: HTMLElement, zIndex: string, transform: string, opacity: string): void {
+        item.style.transform = transform;
+        item.style.opacity = opacity;
+        item.style.display = 'block'; // Make sure item is visible
+        item.style.zIndex = zIndex; // Set z-index based on active position
+      }
+
+      // Set styles for active item
+      setItemStyle(items[active], '2','translateX(-50%) scale(1)', '1');
+
+      // Set styles for items on the left
+      setItemStyle(items[prevIndex1], '1', 'translateX(-120%) scale(0.8)', '0.6');
+      setItemStyle(items[prevIndex2], '1', 'translateX(-170%) scale(0.6)', '0.4');
+
+      // Set styles for items on the right
+      setItemStyle(items[nextIndex1], '1', 'translateX(20%) scale(0.8)', '0.6');
+      setItemStyle(items[nextIndex2], '1', 'translateX(70%) scale(0.6)', '0.4');
+
+    }
+
+    // Event listeners for next and previous buttons
+    // next.onclick = function () {
+    //   active = (active + 1) % items.length;
+    //   loadShow();
+    // }
+
+    // prev.onclick = function () {
+    //   active = (active - 1 + items.length) % items.length;
+    //   loadShow();
+    // }
+
+    // Initial call to display carousel correctly on load
+    loadShow();
+
+    function moveToNextSlide() {
+      active = (active + 1) % items.length;
+      loadShow();
+    }
+
+    // Set the interval to automatically move to the next slide every 2000 milliseconds (2 seconds)
+    setInterval(moveToNextSlide, 2000);
+  });
+
+</script>
