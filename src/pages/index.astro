@@ -347,8 +347,11 @@ import Layout from "../layouts/Layout.astro";
 </style>
 
 <script>
-  // Carousel stuff
-  document.addEventListener('DOMContentLoaded', function () {
+
+  // ------------------------------------------------------------------------------
+  // ------------------------------ Carousel Stuff ------------------------------
+  // ------------------------------------------------------------------------------
+  function initCarousel() {      
     let items = Array.from(document.querySelectorAll('.carousel .item')).map(item => item as HTMLElement);
     // let next = document.getElementById('next');
     // let prev = document.getElementById('prev');
@@ -414,12 +417,23 @@ import Layout from "../layouts/Layout.astro";
       active = (active + 1) % items.length;
       loadShow();
     }
-
     // Set the interval to automatically move to the next slide every 2000 milliseconds (2 seconds)
     setInterval(moveToNextSlide, 2000);
-  });
+  }
 
-  // Search bar stuff
+  function setupCarouselOnPageLoad() {
+    if (document.querySelector('.carousel')) {
+      initCarousel();
+    }
+  }
+
+  // Run the setup function on initial page load and every subsequent pageshow event
+  window.addEventListener('load', setupCarouselOnPageLoad);
+  window.addEventListener('pageshow', setupCarouselOnPageLoad);
+
+  // ------------------------------------------------------------------------------
+  // ------------------------------ Search Bar Stuff ------------------------------
+  // ------------------------------------------------------------------------------
   document.addEventListener('DOMContentLoaded', function () {
   const phrases = [
     'Discover AI Art',
