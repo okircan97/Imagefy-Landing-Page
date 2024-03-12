@@ -8,16 +8,27 @@ body {
   padding-top: 100px;
   padding-bottom: 40px;
 }
-/* 
-ul{
-    margin: 0;
-} */
 
-hr {
-  background-color: #2d2c32;
-  height: 5px;
+hr.style-one {
   margin: 0;
   border: none;
+
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+
+hr.style-two {
+  margin: 0;
+  border: none;
+
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, #ccc, #537b76, #ccc);
+}
+
+br {
+  background-color: rgb(44, 51, 51);
 }
 
 /* Responsive adjustments for smaller screens */
@@ -31,9 +42,9 @@ hr {
 /* ----------------------------------------------------------------*/
 
 /* ----------------------------------------------------------------*/
-/* ------------------------ Mid Container 1 -----------------------*/
+/* -------------------------- Container 1 -------------------------*/
 /* ----------------------------------------------------------------*/
-.middle-container-1-outer {
+.container-1-outer {
   max-width: 100%; /* Or use vw units */
   background: linear-gradient(
     0deg,
@@ -44,7 +55,8 @@ hr {
   justify-content: center;
   margin: auto;
 }
-.middle-container-1-inner1 {
+
+.container-1-inner1 {
   /* background: linear-gradient(
     0deg,
     hsla(180, 7%, 19%, 1) 20%,
@@ -57,7 +69,7 @@ hr {
     hsla(182, 77%, 22%, 1) 93%
   );
 }
-.middle-container-1-inner {
+.container-1-inner {
   max-width: 100%; /* Or use vw units */
   text-align: center;
   justify-content: center;
@@ -73,42 +85,83 @@ hr {
 /* ----------------------------------------------------------------*/
 
 /* ----------------------------------------------------------------*/
-/* ------------------------ Mid Container 2 -----------------------*/
+/* -------------------------- Container 2 -------------------------*/
 /* ----------------------------------------------------------------*/
-.middle-container-2 {
+
+.container-2-1-outer {
   max-width: 100%; /* Or use vw units */
-  background: rgb(44, 51, 51);
+  /* background: linear-gradient(
+    180deg,
+    hsla(180, 7%, 19%, 1) 0%,
+    hsla(145, 26%, 56%, 1) 100%
+  ); */
   background: linear-gradient(
-    90deg,
-    rgba(14, 131, 136, 1) 24%,
-    rgba(14, 131, 136, 1) 60%,
-    rgba(69, 165, 170, 1) 100%
+    180deg,
+    hsla(180, 7%, 19%, 1) 20%,
+    hsla(173, 19%, 40%, 1) 100%
   );
 
+  text-align: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.container-2-2-outer {
+  max-width: 100%; /* Or use vw units */
+  background: linear-gradient(
+    360deg,
+    hsla(310, 4%, 27%, 1) 20%,
+    hsla(173, 19%, 40%, 1) 100%
+  );
+  text-align: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.container-2 {
+  display: flex; /* Use flexbox layout */
+  flex-wrap: nowrap; /* Do not wrap items to the next line */
+  align-items: stretch; /* Stretch items to fill the container vertically */
+  margin: 0;
+  width: auto; /* Width will be determined by the content */
+  min-height: 500px; /* Minimum height to maintain a consistent design */
+
+  /* max-width: 100%;  */
+  /* background: rgb(44, 51, 51); */
   margin: 0;
   width: 100%;
   height: 500px;
   display: flex;
 }
 
-.container-left-img {
+.container-2:hover {
+  transform: rotateY(10deg);
+}
+
+.empty-div {
   max-width: 100%; /* Or use vw units */
   display: inline-block;
-  width: 33%;
+  width: 17%;
   height: 100%;
 }
 
-.container-between-imgs {
+.outer-card {
+  right: 0px;
+  padding: 10px;
+}
+.Feature-card {
   max-width: 100%; /* Or use vw units */
   display: inline-block;
   width: 34%;
   height: 100%;
 
-  text-align: center;
+  right: 0px;
+  /* text-align: center;
   justify-content: center;
-  align-items: center;
-
+  align-items: center; */
   overflow: hidden;
+
+  /* transform: translate(-50%, -50%);  */
 }
 
 .container-right-img {
@@ -116,124 +169,22 @@ hr {
   display: inline-block;
   width: 33%;
   height: 100%;
-}
-
-.left-img {
-  max-width: 100%;
-  height: auto;
-  /* width: 75%;
-    height: 100%; */
-  float: left;
+  position: relative; /* Added to ensure the absolute positioning is relative to this container */
 }
 
 .right-img {
-  max-width: 100%;
-  height: auto;
-  /* width: 75%;
-    height: 100%; */
-  float: right;
-}
-/* ----------------------------------------------------------------*/
-/* ----------------------------------------------------------------*/
-/* ----------------------------------------------------------------*/
-
-/* ----------------------------------------------------------------*/
-/* ------------------------ Mid Container 3 -----------------------*/
-/* ----------------------------------------------------------------*/
-.middle-container-3 {
-  max-width: 100%; /* Or use vw units */
-  background: linear-gradient(
-    90deg,
-    rgba(44, 51, 51, 1) 24%,
-    rgba(69, 165, 170, 1) 60%,
-    rgba(122, 176, 179, 1) 100%
-  );
-  margin: 0;
-  width: 100%;
-  height: 500px;
-  display: flex;
+  max-width: 75%;
+  max-height: 75%; /* Ensure the image is not taller than the container */
+  width: auto; /* Keep image aspect ratio */
+  height: auto; /* Keep image aspect ratio */
+  position: absolute; /* Position the image absolutely within the container */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the image in the container */
+  border-radius: 20px;
+  box-shadow: 0px 0px 100px rgb(159, 157, 157);
 }
 
-.container-3-1 {
-  max-width: 100%; /* Or use vw units */
-  width: 26%;
-  height: 100%;
-}
-.container-3-2 {
-  max-width: 100%; /* Or use vw units */
-  width: 26%;
-  height: 100%;
-}
-
-.container-3-3 {
-  max-width: 100%; /* Or use vw units */
-  width: 26%;
-  height: 100%;
-}
-
-.empty-1 {
-  width: 5%;
-  height: 100%;
-}
-
-.empty-2 {
-  width: 6%;
-  height: 100%;
-}
-/* ----------------------------------------------------------------*/
-/* ----------------------------------------------------------------*/
-/* ----------------------------------------------------------------*/
-
-/* ----------------------------------------------------------------*/
-/* ------------------------ Mid Container 4 -----------------------*/
-/* ----------------------------------------------------------------*/
-.middle-container-4 {
-  max-width: 100%; /* Or use vw units */
-  background-color: #cbe4de;
-  background: rgb(44, 51, 51);
-  background: linear-gradient(
-    90deg,
-    rgba(44, 51, 51, 1) 24%,
-    rgba(122, 176, 179, 1) 60%,
-    rgba(173, 251, 255, 1) 100%
-  );
-  margin: 0;
-  width: 100%;
-  height: 500px;
-  display: flex;
-}
-
-.container-4-1 {
-  max-width: 100%; /* Or use vw units */
-  width: 26%;
-  height: 100%;
-}
-.container-4-2 {
-  max-width: 100%; /* Or use vw units */
-  width: 26%;
-  height: 100%;
-}
-
-.container-4-3 {
-  max-width: 100%; /* Or use vw units */
-  width: 26%;
-  height: 100%;
-}
-
-.empty-1 {
-  width: 5%;
-  height: 100%;
-}
-
-.empty-2 {
-  width: 6%;
-  height: 100%;
-}
-
-.bottom-img {
-  max-width: 100%;
-  height: auto;
-}
 /* ----------------------------------------------------------------*/
 /* ----------------------------------------------------------------*/
 /* ----------------------------------------------------------------*/
@@ -294,6 +245,89 @@ hr {
   position: relative;
   top: 1px;
 }
+
+.animated-button {
+  min-width: 300px;
+  min-height: 60px;
+  font-family: "Nunito", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  font-weight: 700;
+  background: #4fd1c5;
+  background: linear-gradient(
+    90deg,
+    rgba(129, 230, 217, 1) 0%,
+    rgba(79, 209, 197, 1) 100%
+  );
+  border: none;
+  border-radius: 1000px;
+  box-shadow: 12px 12px 24px rgba(79, 209, 197, 0.64);
+  transition: all 0.3s ease-in-out 0s;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  /* padding: 10px; */
+}
+
+.animated-button::before {
+  content: "";
+  border-radius: 1000px;
+  min-width: 300px;
+  min-height: 60px;
+  /* border: 6px solid #00ffcb; */
+  box-shadow: 0 0 60px rgba(0, 255, 203, 0.64);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all 0.5s ease-in-out 0s;
+}
+
+.animated-button:hover,
+.button:focus {
+  color: #313133;
+  transform: translateY(-6px);
+}
+
+.animated-button:hover::before,
+.animated-button:focus::before {
+  opacity: 1;
+}
+
+.animated-button::after {
+  content: "";
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  border: 6px solid #00ffcb;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: ring 3s infinite;
+}
+
+.animated-button:hover::after,
+.animated-button:focus::after {
+  animation: none;
+  display: none;
+}
+
+@keyframes ring {
+  0% {
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+  }
+  100% {
+    width: 200px;
+    height: 200px;
+    opacity: 0;
+  }
+}
+
 /* ----------------------------------------------------------------*/
 /* ----------------------------------------------------------------*/
 /* ----------------------------------------------------------------*/
@@ -302,14 +336,6 @@ hr {
 /* ----------------------------- Fonts ----------------------------*/
 /* ----------------------------------------------------------------*/
 .big {
-  /* font-size: 100px;
-  color: #e4e1f8;
-  font-weight: bold; */
-
-  /* background: linear-gradient (159deg, #dde6e8, #2980b9);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; */
-
   color: white;
   text-align: center;
   align-items: center;
@@ -325,7 +351,16 @@ hr {
 
 .not_so_big {
   font-size: 50px;
+  text-transform: uppercase;
+  font-weight: bold;
   color: #e4e1f8;
+  top: 50%;
+}
+
+.imagefy-header {
+  font-size: 50px;
+  color: #e4e1f8;
+  top: 50%;
 }
 
 .smol {
@@ -333,6 +368,14 @@ hr {
   color: #e4e1f8;
   height: 100%;
 }
+
+.smoller {
+  font-size: 20px;
+  color: #e4e1f8;
+  height: 100%;
+  transform: translate(-50%, -50%); /* Center the image in the container */
+}
+
 .really_smol {
   font-size: clamp(
     20px,
@@ -345,7 +388,118 @@ hr {
   height: auto;
   overflow-wrap: break-word;
   hyphens: auto;
+  transform: translate(-50%, -50%); /* Center the image in the container */
 }
 /* ----------------------------------------------------------------*/
 /* ----------------------------------------------------------------*/
 /* ----------------------------------------------------------------*/
+
+/* ----------------------------------------------------------------*/
+/* --------------------------- Carousel ---------------------------*/
+/* ----------------------------------------------------------------*/
+
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /* overflow: hidden; */
+}
+
+.carousel-items {
+  position: relative;
+  width: 100%;
+  height: 500px;
+}
+
+.item {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  text-align: justify;
+  background: rgba(1, 1, 1, 0.7);
+  /* background: #2c3333; */
+  border-radius: 10px;
+  padding: 20px;
+  transition: 0.5s;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the item */
+}
+
+#next,
+#prev {
+  position: absolute;
+  top: 50%; /* Align vertically to the middle of the carousel */
+  z-index: 2;
+  cursor: pointer; /* Change cursor to pointer when hovering over the button */
+}
+
+#prev {
+  left: 0; /* Align to the left end of the carousel */
+}
+
+#next {
+  right: 0; /* Align to the right end of the carousel */
+}
+
+.carousel-img {
+  max-width: 75%;
+  max-height: 75%; /* Ensure the image is not taller than the container */
+  width: auto; /* Keep image aspect ratio */
+  height: auto; /* Keep image aspect ratio */
+  position: absolute; /* Position the image absolutely within the container */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the image in the container */
+  border-radius: 20px;
+}
+
+/* ----------------------------------------------------------------*/
+/* ----------------------------------------------------------------*/
+/* ----------------------------------------------------------------*/
+
+/* ----------------------------------------------------------------*/
+/* --------------------------- Search bar ---------------------------*/
+/* ----------------------------------------------------------------*/
+
+.custom_input {
+  display: flex;
+  align-items: center;
+  position: relative;
+  max-width: 100%;
+}
+
+.input {
+  font-size: 18px;
+  padding: 5px 10px;
+  width: 100%;
+  padding-left: 35px;
+  outline: none;
+  background: #ffffff;
+  color: #000000;
+  border: 1px solid #c4d1eb;
+  border-radius: 5px;
+  box-shadow: 3px 3px 2px 0px #e2e2e2;
+  transition: 0.3s ease;
+}
+
+.input:focus {
+  background: #f2f2f2;
+  border: 1px solid #5a7ec7;
+  border-radius: 10px;
+}
+
+.input::placeholder {
+  color: #dddddd;
+}
+
+.svg_icon {
+  position: absolute;
+  left: 10px;
+  fill: #4660dc;
+  width: 18px;
+  height: 18px;
+}
