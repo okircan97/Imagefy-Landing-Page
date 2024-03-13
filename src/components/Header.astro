@@ -14,7 +14,10 @@ const industries = await getCollection("industries");
     <li class="spacer"></li>
     <!-- Dropdown for Services -->
     <div class="dropdown">
-      <button class="dropbtn">Services</button>
+      <button class="dropbtn">
+        <img class= "item-img" src="../images/services.png" alt="">
+        Services
+      </button>
       <div class="dropdown-content">
         <a href="#middle-container-2">Face Generation</a>
         <a href="#">Human Generation</a>
@@ -22,7 +25,10 @@ const industries = await getCollection("industries");
     </div>
     <!-- Dropdown for Industries -->
     <div class="dropdown">
-      <button class="dropbtn">Industries</button>
+      <button class="dropbtn">
+        <img class= "item-img" src="../images/industries-no-bg.png" alt="">
+        Industries
+      </button>
       <div class="dropdown-content">
         {
           industries.map((industries) => (
@@ -34,16 +40,22 @@ const industries = await getCollection("industries");
       </div>
     </div>
     <!-- Dropdown for Company -->
-    <div class="dropdown">
-      <button class="dropbtn">Company</button>
+    <!-- <div class="dropdown">
+      <button class="dropbtn">
+        <img class= "item-img" src="../images/Company-no-bg.png" alt="">
+        Company
+      </button>
       <div class="dropdown-content">
         <a href="/AboutUs">About Us</a>
         <a href="/ContactUs">Contact Us</a>
       </div>
-    </div>
+    </div> -->
     <!-- Other dropdowns -->
     <div class="dropdown">
-      <button class="dropbtn">ImagefyPro</button>
+      <button class="dropbtn">
+        <img class= "item-img" src="../images/plus.png" alt="">
+        ImagefyPro
+      </button>
     </div>
   </ul>
 </div>
