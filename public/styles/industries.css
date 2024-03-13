@@ -1,135 +1,168 @@
 /* Add this CSS to your main stylesheet, or include it in a <style> tag in the head of your .astro file */
 
-body, html {
-    margin: 0;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
-    background: rgb(45,44,50);
-    background: linear-gradient(90deg, rgba(45,44,50,1) 24%, rgba(46,79,79,1) 60%, rgba(19,133,138,1) 100%);
-    padding-top: 80px;
-    padding-bottom: 40px;
-  }
-  
-  .industries-section {
-    text-align: center;
-    padding: 2em;
-    background-color: #f8f9fa; /* Adjust the background color as needed */
-    background: rgb(45,44,50);
-    background: linear-gradient(90deg, rgba(45,44,50,1) 24%, rgba(46,79,79,1) 60%, rgba(19,133,138,1) 100%);
-  }
-  
-  .industries-section p {
-    margin-bottom: 2em;
-  }
-  .industries-section h1 {
-    margin-bottom: 2em;
-  }
-  
-  .industries-section button {
-    background-color: #0056b3; /* Adjust button background color as needed */
-    color: white;
-    border: none;
-    padding: 1em 2em;
-    font-size: 1em;
-    cursor: pointer;
-    border-radius: 5px; /* Rounded corners */
-    margin-bottom: 3em;
-  }
-  
-  .industries-section button:hover {
-    background-color: #004494; /* Darker background on hover */
-  }
-  
-  .benefits {
-    display: flex;
-    justify-content: space-around;
-    align-items: stretch;
-    flex-wrap: wrap; /* Wrap items on smaller screens */
-    gap: 2em; /* Space between benefit items */
-  }
-  
-  .benefit-item {
-    flex: 1; /* Each item will grow to use up equal space */
-    min-width: 250px; /* Minimum width of each item to ensure they don't get too small */
-    padding: 1em;
-    background: rgba(0,0,0,0.1);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex; /* Using flexbox inside each benefit item */
-    flex-direction: column; /* Stack the content vertically */
-    align-items: center; /* Center-align the content */
-    justify-content: center; /* Center content vertically */
-  }
-  
-  .benefit-item img {
-    width: 75px; /* Adjust image size as needed */
-    height: auto;
-    margin-bottom: 1em;
-  }
-  
-  .benefit-item h2 {
-    /* font-size: 1.2em;
+body,
+html {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  background: rgb(45, 44, 50);
+  background: linear-gradient(
+    90deg,
+    rgba(45, 44, 50, 1) 24%,
+    rgba(46, 79, 79, 1) 60%,
+    rgba(19, 133, 138, 1) 100%
+  );
+  padding-top: 80px;
+  /* padding-bottom: 40px; */
+}
+
+.industries-section {
+  text-align: center;
+  padding: 2em;
+  background-color: #f8f9fa; /* Adjust the background color as needed */
+  background: rgb(45, 44, 50);
+  background: linear-gradient(
+    90deg,
+    rgba(45, 44, 50, 1) 24%,
+    rgba(46, 79, 79, 1) 60%,
+    rgba(19, 133, 138, 1) 100%
+  );
+}
+
+.industries-section p {
+  margin-bottom: 2em;
+}
+.industries-section h1 {
+  margin-bottom: 2em;
+}
+
+.industries-section button {
+  background-color: #0056b3; /* Adjust button background color as needed */
+  color: white;
+  border: none;
+  padding: 1em 2em;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 5px; /* Rounded corners */
+  margin-bottom: 3em;
+}
+
+.industries-section button:hover {
+  background-color: #004494; /* Darker background on hover */
+}
+
+.benefits {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  flex-wrap: wrap; /* Wrap items on smaller screens */
+  gap: 2em; /* Space between benefit items */
+}
+
+.benefit-item {
+  flex: 1; /* Each item will grow to use up equal space */
+  min-width: 250px; /* Minimum width of each item to ensure they don't get too small */
+  padding: 1em;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex; /* Using flexbox inside each benefit item */
+  flex-direction: column; /* Stack the content vertically */
+  align-items: center; /* Center-align the content */
+  justify-content: center; /* Center content vertically */
+}
+
+.benefit-item img {
+  width: 75px; /* Adjust image size as needed */
+  height: auto;
+  margin-bottom: 1em;
+}
+
+.benefit-item h2 {
+  /* font-size: 1.2em;
     color: #333;
     margin-bottom: 0.5em; */
 
-    font-size: clamp(20px, 2vw, 25px); /* Adjust min, preferred, and max values as needed */
-    color: #E4E1F8;
-    max-width:100%;
-    height:auto;
-    overflow-wrap: break-word;
-    hyphens: auto;
-  }
-  
-  .benefit-item p {
-    font-size: clamp(10px, 2vw, 20px); /* Adjust min, preferred, and max values as needed */
-    color: #E4E1F8;
-    max-width:100%;
-    height:auto;
-    overflow-wrap: break-word;
-    hyphens: auto;
-  }
-  
-  /* ----------------------------------------------------------------*/
+  font-size: clamp(
+    20px,
+    2vw,
+    25px
+  ); /* Adjust min, preferred, and max values as needed */
+  color: #e4e1f8;
+  max-width: 100%;
+  height: auto;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.benefit-item p {
+  font-size: clamp(
+    10px,
+    2vw,
+    20px
+  ); /* Adjust min, preferred, and max values as needed */
+  color: #e4e1f8;
+  max-width: 100%;
+  height: auto;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+/* ----------------------------------------------------------------*/
 /* ----------------------------- Fonts ----------------------------*/
 /* ----------------------------------------------------------------*/
-.big{
-    font-size: 100px;
-    color:#E4E1F8;
+.big {
+  font-size: 100px;
+  color: #e4e1f8;
 }
 
-.not_so_big{
-    font-size: 50px;
-    color:#E4E1F8;
+.not_so_big {
+  font-size: 50px;
+  color: #e4e1f8;
 }
 
-.smol{
-    font-size: 40px;
-    color:#E4E1F8;
-    height: 100%;
+.smol {
+  font-size: 40px;
+  color: #e4e1f8;
+  height: 100%;
 }
 .really_smol {
-    font-size: clamp(20px, 2vw, 25px); /* Adjust min, preferred, and max values as needed */
-    color: #E4E1F8;
-    /* height: 100%; */
-    max-width:100%;
-    height:auto;
-    overflow-wrap: break-word;
-    hyphens: auto;
-  }
+  font-size: clamp(
+    20px,
+    2vw,
+    25px
+  ); /* Adjust min, preferred, and max values as needed */
+  color: #e4e1f8;
+  /* height: 100%; */
+  max-width: 100%;
+  height: auto;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
 .so_f_smol {
-    font-size: clamp(15px, 2vw, 20px); /* Adjust min, preferred, and max values as needed */
-    color: #E4E1F8;
-    /* height: 100%; */
-    max-width:100%;
-    height:auto;
-    overflow-wrap: break-word;
-    hyphens: auto;
-  }
+  font-size: clamp(
+    15px,
+    2vw,
+    20px
+  ); /* Adjust min, preferred, and max values as needed */
+  color: #e4e1f8;
+  /* height: 100%; */
+  max-width: 100%;
+  height: auto;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
 
-
-  /* Responsive adjustments for smaller screens */
-  @media (max-width: 768px) {
-    .benefit-item {
-      width: 100%; /* Full width on small screens */
-    }
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .benefit-item {
+    width: 100%; /* Full width on small screens */
   }
+}
+
+main {
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  justify-content: space-between; /* Distribute space between items */
+  min-height: calc(100vh); /* Subtract the header height */
+}
