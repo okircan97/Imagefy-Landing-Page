@@ -1,0 +1,81 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="ImagefyPro" additionalStylesheets={["/styles/pricing.css"]}>
+  <main>
+    <div class="heading-container">
+        <span class="main-heading">Choose Your Journey!</span>
+        <br /><br /><br />
+        <span class="sub-heading"
+          >Our flexible plans are designed to match your pace. Select what suits you best and adjust anytime.</span
+        >
+        <br><br><br><br><br><br><br>
+    </div>
+
+    <div class="plans-container">
+        <div class="plan">
+            <div class="plan-title">
+                <img class= "plan-img" src="../images/plus.png" alt="">
+                <h2 >Plus</h2>
+            </div>
+            <a class="plan-desc">I just need the basics!</a>
+            <ul class="plan-features">
+                <li>15 downloads per month</li>
+                <li>Unlimited face generations</li>
+                <li>No watermarks</li>
+                <li>Commercial use</li>
+            </ul>
+            <button class="plan-button">Subscribe now</button>
+            <p class="plan-price">$14.99<span class="plan-duration">/month</span></p>
+        </div>
+
+        <div class="plan">
+            <div class="plan-title">
+                <img class= "plan-img" src="../images/premium.png" alt="">
+                <h2 >Premium</h2>
+            </div>
+            <a class="plan-desc">Full access to all the premium features across all platforms with a nice chunk of AI credits.</a>
+            <ul class="plan-features">
+                <li>100 downloads per month</li>
+                <li>Unlimited face generations</li>
+                <li>No watermarks</li>
+                <li>Commercial use</li>
+            </ul>
+            <button class="plan-button">Start Free Trial</button>
+            <p class="plan-price">$49.99<span class="plan-duration">/month</span></p>            
+        </div>
+    
+        <div class="plan">
+            <div class="plan-title">
+                <h2 >Bulk</h2>
+            </div>
+            <a class="plan-desc">Buy multiple images at once without a subscription.</a>
+            <div class="plan-features">
+                <div class="price-tier">
+                    <span class="photo-range">1-20</span>
+                    <span class="photo-price">$9</span>
+                </div>
+                <div class="price-tier">
+                    <span class="photo-range">21-50</span>
+                    <span class="photo-price">$7</span>
+                </div>
+                <div class="price-tier">
+                    <span class="photo-range">51-250</span>
+                    <span class="photo-price">$5</span>
+                </div>
+                <div class="price-tier">
+                    <span class="photo-range">250-1000</span>
+                    <span class="photo-price">$2.5</span>
+                </div>
+                <div class="price-tier">
+                    <span class="photo-range">1000+</span>
+                    <span class="photo-price">$1</span>
+                </div>
+            </div>
+            <button class="bulk-button">Start Browsing</button>
+            <!-- <p class="plan-price">$12.99<span class="plan-duration">/month</span></p> -->
+        </div>
+    </div>
+    
+  </main>
