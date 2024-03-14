@@ -1,0 +1,228 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #000; /* Replace with the actual background color */
+  color: #fff; /* Replace with the actual text color */
+
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+
+  background: rgb(45, 44, 50);
+  background: linear-gradient(
+    90deg,
+    rgba(45, 44, 50, 1) 24%,
+    rgba(46, 79, 79, 1) 60%,
+    rgba(19, 133, 138, 1) 100%
+  );
+}
+
+main {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100vh; /* Full height of the viewport */
+
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  justify-content: flex-start; /* Aligns content to start at the top */
+  align-items: center; /* Center items horizontally */
+  height: 100vh; /* Full height of the viewport */
+  padding-top: 150px; /* Add some space at the top */
+}
+
+.main-heading {
+  font-size: 50px; /* Large font size for the main heading */
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 0; /* Remove default margin */
+}
+
+.sub-heading {
+  font-size: 20px; /* Smaller font size for the sub-heading */
+  margin: 10px 0 20px; /* Spacing around the sub-heading */
+}
+
+.heading-container {
+  text-align: center; /* Center the text inside the container */
+  color: #e4e1f8; /* The color of your text */
+  padding: 20px 0; /* Add some padding at the top and bottom */
+}
+
+.plans-container {
+  display: flex;
+  justify-content: center; /* Center the plans horizontally */
+  flex-wrap: wrap; /* Wrap items if necessary */
+  gap: 20px; /* Space between plans */
+  align-items: flex-end;
+}
+
+.plan {
+  background-color: #333; /* Replace with the actual plan background color */
+  background: rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 25px;
+  width: 300px; /* Adjust as needed */
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distributes space evenly */
+  position: relative; /* For absolute positioning of the price */
+}
+
+.plan:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-6px);
+}
+
+.plan-header {
+  background-color: #000; /* Adjust color to match the design */
+  color: #ffd700; /* Adjust icon and title color if needed */
+  padding: 10px;
+  border-radius: 10px 10px 0 0; /* Rounded corners at the top */
+  position: relative; /* To position the title correctly */
+}
+
+.plan-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: center;
+
+  display: flex; /* Use flex display */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  gap: 10px; /* Add some space between the image and the text */
+}
+
+.plan-desc {
+  text-align: center;
+}
+
+.plan-features {
+  list-style: none; /* Removes default list styling */
+  padding: 0; /* Resets padding */
+  margin: 20px 0; /* Space above and below the feature list */
+}
+
+.plan-features li {
+  font-size: 18px; /* Adjust to match design */
+  border-bottom: 1px solid #555; /* Subtle separator, adjust color as needed */
+  padding: 10px 0; /* Space between list items */
+}
+
+.plan-price {
+  font-size: 32px;
+  margin-top: 20px; /* Remove this as it conflicts with absolute positioning */
+  position: absolute; /* To position at the bottom */
+  bottom: 20px; /* Distance from the bottom */
+  width: 100%; /* Ensures it spans the width of the container */
+  left: 0; /* Align to the left */
+  text-align: center; /* Center the text */
+
+  position: absolute; /* To position at the bottom */
+  bottom: 10px; /* Adjusted to 10px for less distance from the bottom */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Align center */
+  margin: 0; /* Reset any margin */
+}
+
+.plan-duration {
+  font-size: 16px;
+}
+
+.plan-button {
+  background-color: #007bff; /* Replace with actual button color */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px; /* Space above the button */
+
+  padding: 10px 20px;
+  margin-bottom: 70px; /* Add space for the price tag */
+}
+
+.plan-button:hover {
+  background-color: #0056b3; /* Darker shade for hover effect */
+}
+
+.plan-premium {
+  box-shadow: 0px 0px 10px rgba(0, 123, 255, 0.5); /* Adjust color and spread as needed */
+}
+
+.plan-duration {
+  font-size: 16px;
+}
+
+.plan-img {
+  height: 25px;
+  width: auto;
+}
+.price-tier {
+  display: flex;
+  justify-content: space-between; /* Aligns the photo-range and photo-price on opposite ends */
+  align-items: center; /* Centers them vertically */
+  position: relative; /* For pseudo-element positioning */
+}
+
+.price-tier::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 1px;
+}
+
+.photo-range,
+.photo-price {
+  padding: 10px 0; /* Gives space above and below each tier */
+  background-color: transparent; /* Ensures the background doesn't cover the dotted line */
+  z-index: 1; /* Ensures the text appears above the dotted line */
+}
+
+.bulk-button {
+  background-color: #2d2c32; /* Replace with actual button color */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px; /* Space above the button */
+
+  padding: 10px 20px;
+  margin-bottom: 70px; /* Add space for the price tag */
+}
+
+.bulk-button:hover {
+  background-color: #1a1a1d; /* Darker shade for hover effect */
+}
+
+/* FONTS */
+
+.not_so_big {
+  font-size: 50px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #e4e1f8;
+  top: 50%;
+}
+
+.smol {
+  font-size: 40px;
+  color: #e4e1f8;
+  height: 100%;
+}
