@@ -93,6 +93,13 @@ br {
 /* ----------------------------------------------------------------*/
 
 .container-2-1-outer {
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center children horizontally */
+  justify-content: center; /* Center children vertically, if you want */
+  text-align: center; /* Center text */
+  max-width: 100%;
+
   max-width: 100%;
   background: linear-gradient(
     180deg,
@@ -105,7 +112,22 @@ br {
   margin: auto;
 }
 
+.container2-1-title {
+  width: 50%;
+  align-self: center;
+  align-content: center;
+  left: 50%;
+  padding: 100px;
+}
+
 .container-2-2-outer {
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center children horizontally */
+  justify-content: center; /* Center children vertically, if you want */
+  text-align: center; /* Center text */
+  max-width: 100%;
+
   max-width: 100%; /* Or use vw units */
   background: linear-gradient(
     360deg,
@@ -115,6 +137,14 @@ br {
   text-align: center;
   justify-content: center;
   margin: auto;
+}
+
+.container2-2-title {
+  width: 50%;
+  align-self: center;
+  align-content: center;
+  left: 50%;
+  padding: 100px;
 }
 
 .container-2 {
