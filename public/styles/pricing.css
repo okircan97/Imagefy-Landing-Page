@@ -226,3 +226,33 @@ main {
   color: #e4e1f8;
   height: 100%;
 }
+
+/* TOGGLE BUTTON */
+
+.toggle-switch {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background: #555; /* Dark background for the switch */
+  border-radius: 20px; /* Rounded edges for the switch */
+  padding: 5px; /* Padding around the buttons */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Optional: adds a shadow for depth */
+}
+.toggle-button {
+  background: transparent;
+  border: none;
+  color: white;
+  padding: 10px 20px; /* Padding inside the buttons */
+  margin: 5px; /* Small space between the buttons */
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  border-radius: 15px; /* Slightly rounded edges for the buttons */
+  flex: 0 0 auto; /* Do not grow or shrink, based on content */
+}
+
+.toggle-button.active {
+  background: #007bff; /* Highlight color */
+  color: #fff;
+  transform: scale(1.1); /* Slightly increase the size of the active button */
+}
