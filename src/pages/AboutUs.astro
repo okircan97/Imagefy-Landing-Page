@@ -5,17 +5,29 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="About Us" additionalStylesheets={["/styles/about_us.css"]}>
   <main class="about-main">
-    <section class="about-intro">
-      <h1 class="not_so_big">About Us</h1>
-      <p class="really_smol">
-        Welcome to the visionary world of Imagefy, where a dedicated quartet of
-        technologists and strategists are reimagining the realm of AI-generated
-        imagery. Our team, a blend of expertise in computer science, machine
-        learning, graphic design, and digital marketing, is united by a singular
-        ambition: to craft a web application that transcends being a mere tool
-        and emerges as a boundless canvas for creativity.
-      </p>
-    </section>
+    <div class="about_smthng">
+      <section class="about-intro">
+        <div class="about-intro-wrapper">
+          <!-- Image div -->
+          <div class="about-intro-image">
+            <img src="../images/triple-face.png" alt="Our Team" />
+          </div>
+          <!-- Text div -->
+          <div class="about-story-text">
+            <h1 class="not_so_big">About Us</h1>
+            <p class="really_smol">
+              Welcome to the visionary world of Imagefy, where a dedicated quartet of
+              technologists and strategists are reimagining the realm of AI-generated
+              imagery. Our team, a blend of expertise in computer science, machine
+              learning, graphic design, and digital marketing, is united by a singular
+              ambition: to craft a web application that transcends being a mere tool
+              and emerges as a boundless canvas for creativity.
+            </p>
+          </div>
+        </div>
+    
+
+
     <section class="about-story-content">
       <div class="about-story-text">
         <h2 class="really_smol">Our Story</h2>
@@ -46,10 +58,10 @@ import Layout from "../layouts/Layout.astro";
         </p>
       </div>
       <div class="about-story-image">
-        <!-- Replace with your image path -->
-        <img src="../images/triple-face3.png" alt="Our Team" />
+        <img src="../images/faces_behind_faces.png" alt="Our Team" />
       </div>
     </section>
+  </div>
     <br><br><br><br><br><br><br>
   </main>
 </Layout>
