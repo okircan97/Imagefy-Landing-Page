@@ -1,0 +1,120 @@
+html,
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  padding-top: 80px;
+
+  background: rgb(45, 44, 50);
+  background: linear-gradient(
+    90deg,
+    rgba(45, 44, 50, 1) 24%,
+    rgba(46, 79, 79, 1) 60%,
+    rgba(19, 133, 138, 1) 100%
+  );
+}
+
+main {
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  justify-content: space-between; /* Distribute space between items */
+  min-height: calc(100vh); /* Subtract the header height */
+}
+
+.faq-container {
+  min-height: calc(70vh);
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.faq-title-bigger {
+  text-align: center;
+  margin-top: calc(10vh);
+  margin-bottom: 50px;
+  color: white;
+
+  font-size: 50px; /* Large font size for the main heading */
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.faq-title {
+  text-align: center;
+  margin-bottom: 100px;
+  color: white;
+}
+
+.faq {
+  border-radius: 8px;
+}
+
+.faq-question {
+  padding: 10px;
+  position: relative;
+  width: 100%; /* Set the width to 100% to fill the container */
+  box-sizing: border-box; /* Include padding and borders in the element's width */
+}
+
+.plan-features {
+  list-style: none; /* Removes default list styling */
+  padding: 0; /* Resets padding */
+  margin: 20px 0; /* Space above and below the feature list */
+}
+
+.plan-features li {
+  font-size: 18px; /* Adjust to match design */
+  border-bottom: 1px solid #555; /* Subtle separator, adjust color as needed */
+  padding: 10px 0; /* Space between list items */
+}
+
+.question-toggle {
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  padding: 20px;
+  font-size: 25px;
+  cursor: pointer;
+  position: relative;
+  color: white;
+  border-bottom: 1px solid #555;
+
+  width: calc(
+    100% - 40px
+  ); /* Subtract the padding from the width if necessary */
+
+  background-color: #333; /* Replace with the actual plan background color */
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 25px;
+}
+
+.question-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-6px);
+}
+.toggle-icon {
+  position: absolute;
+  right: 30px;
+}
+
+.faq-answer {
+  display: none;
+  padding: 30px;
+  /* background: #fff; */
+  border-bottom: 1px solid #555;
+  color: white;
+  font-size: 20px;
+
+  width: calc(
+    100% - 60px
+  ); /* Adjust width to match the toggle button if necessary */
+  box-sizing: border-box; /* Include padding and borders in the element's width */
+}
+
+.faq-answer p {
+  margin: 0;
+  color: white;
+}
+
+/* JavaScript is required to make the + expand/collapse the answer */
