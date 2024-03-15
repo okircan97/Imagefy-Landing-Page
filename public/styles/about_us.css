@@ -35,6 +35,44 @@ body > main {
 /* -------------------------- About Us Specific Stuff -------------------------*/
 /* ----------------------------------------------------------------------------*/
 
+/* --------------------------------------------------------------------------------- */
+/* About Intro Section */
+.about-intro-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  width: 100%;
+}
+
+.about-intro-image {
+  flex: 1; /* Takes up 1 part of the flex container */
+  max-width: 65%; /* Limits the width to half of the container */
+}
+
+.about-intro-image img {
+  max-width: 100%; /* Ensures image is responsive and doesn't overflow */
+  height: auto; /* Maintains aspect ratio */
+}
+
+.about-intro-text {
+  flex: 2; /* Takes up 2 parts of the flex container */
+  max-width: 50%; /* Limits the width to half of the container */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .about-intro-wrapper {
+    flex-direction: column; /* Stacks image and text vertically on small screens */
+  }
+
+  .about-intro-image,
+  .about-intro-text {
+    max-width: 100%; /* Each takes full width on small screens */
+  }
+}
+/* --------------------------------------------------------------------------------- */
+
 /* About Us Page Specific Styles */
 .about-main {
   display: flex;
@@ -43,7 +81,41 @@ body > main {
   max-width: 1200px;
   margin: auto;
   padding: 20px;
+  justify-content: space-between; /* Distribute space between items */
+  min-height: calc(100vh); /* Subtract the header height */
 }
+
+.about_smthng {
+  margin-top: 50px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.about_smthng:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-6px);
+}
+
+/* .some_container {
+  flex: 1;
+  padding: 2rem;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.1);
+}
+.some_container:hover {
+  flex: 1;
+  padding: 2rem;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-6px);
+} */
 
 .about-intro {
   text-align: center;
@@ -185,10 +257,3 @@ body > main {
 .about-main {
   margin-bottom: 0;
 } */
-
-main {
-  display: flex;
-  flex-direction: column; /* Stack children vertically */
-  justify-content: space-between; /* Distribute space between items */
-  min-height: calc(100vh); /* Subtract the header height */
-}
