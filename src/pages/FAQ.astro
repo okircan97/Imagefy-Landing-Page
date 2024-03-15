@@ -1,0 +1,57 @@
+---
+// import ContactLayout from "../layouts/ContactLayout.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="FAQ" additionalStylesheets={["/styles/FAQ.css"]}>
+  <main>
+    <div class="faq-container">
+        <h1 class="faq-title-bigger"> Frequenlty asked questions</h1>
+        <h2 class="faq-title">Do you have a question?</h2>
+        <div class="faq">
+            <div class="faq-question">
+                <button class="question-toggle">What is Imagefy?<span class="toggle-icon">+</span></button>
+                <div class="faq-answer">
+                <p>Imagefy is an online human face generator.</p>
+                </div>
+                <button class="question-toggle">Is it free to use Imagefy?<span class="toggle-icon">+</span></button>
+                <div class="faq-answer">
+                <p>You can enjoy Imagefy's trial version, which offers a 3 days trivial for you to download 5 photos and generate 3 photos.</p>
+                </div>
+                <button class="question-toggle">Is it safe to use Imagefy?<span class="toggle-icon">+</span></button>
+                <div class="faq-answer">
+                <p>Imagefy's dedication to security and privacy guarantees users a secure experience while generating and downloading AI generated human faces.</p>
+                </div>
+                <button class="question-toggle">Does Imagefy offers a subscription plan?<span class="toggle-icon">+</span></button>
+                <div class="faq-answer">
+                <p>Yes, we do offer variety of plans: Plus and Premium. You can also get photos without a subscription. Check out the "Pricing" page for the details.</p>
+                </div>
+                <button class="question-toggle">Can I use Imagefy on different devices?<span class="toggle-icon">+</span></button>
+                <div class="faq-answer">
+                <p>Yes, you can use it on any device. </p>
+                </div>
+                <button class="question-toggle">How can I get started with Imagefy?<span class="toggle-icon">+</span></button>
+                <div class="faq-answer">
+                <p>Choose a plan and start browsing, or dive head first, and most importantly, enjoy!</p>
+                </div>
+            </div>
+          <!-- Repeat for other questions -->
+        </div>
+      </div>
+  </main>
+  <br><br><br><br><br><br>
+</Layout>
+
+<script>
+    document.querySelectorAll('.question-toggle').forEach((button) => {
+      button.addEventListener('click', () => {
+        const answer = button.nextElementSibling as HTMLElement; // Cast to HTMLElement
+        if (answer) {
+          answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+          const toggleIcon = button.querySelector('.toggle-icon') as HTMLElement; // Cast to HTMLElement
+          toggleIcon.textContent = answer.style.display === 'block' ? '-' : '+';
+        }
+      });
+    });
+    </script>
+    
