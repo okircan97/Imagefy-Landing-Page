@@ -10,7 +10,12 @@ import Layout from "../layouts/Layout.astro";
         <span class="sub-heading"
           >Our flexible plans are designed to match your pace. Select what suits you best and adjust anytime.</span
         >
-        <br><br><br><br><br><br><br>
+        <br><br><br><br><br>
+        <div class="toggle-switch">
+            <button class="toggle-button active" id="monthlyButton" class="active">Monthly</button>
+            <button class="toggle-button" id="yearlyButton">Yearly</button>
+        </div>
+        <br><br><br><br><br>
     </div>
 
     <div class="plans-container">
@@ -77,5 +82,51 @@ import Layout from "../layouts/Layout.astro";
             <!-- <p class="plan-price">$12.99<span class="plan-duration">/month</span></p> -->
         </div>
     </div>
-    
+
+    <script>
+        // JavaScript to switch between monthly and yearly plans
+        const monthlyButton = document.getElementById('monthlyButton');
+        const yearlyButton = document.getElementById('yearlyButton');
+        const planPriceElements = document.querySelectorAll('.plan-price');
+        const planDurationElements = document.querySelectorAll('.plan-duration');
+
+        // Define monthly and yearly prices and texts
+        const monthlyPrices = ['$14.99', '$49.99']; // Add all monthly prices
+        const yearlyPrices = ['$159.99', '$399.99']; // Add all yearly prices
+        const monthlyText = '/month';
+        const yearlyText = '/year';
+
+        // Function to update the prices and duration
+        function updatePricing(isMonthly: boolean) {
+            planPriceElements.forEach((priceElement, index) => {
+                if (priceElement instanceof HTMLElement) {
+                    priceElement.textContent = isMonthly ? monthlyPrices[index] : yearlyPrices[index];
+                }
+            });
+
+            planDurationElements.forEach((durationElement) => {
+                if (durationElement instanceof HTMLElement) {
+                    durationElement.textContent = isMonthly ? monthlyText : yearlyText;
+                }
+            });
+        }
+
+        // Event listeners for the buttons
+        monthlyButton?.addEventListener('click', () => {
+            updatePricing(true);
+            monthlyButton.classList.add('active');
+            yearlyButton?.classList.remove('active');
+        });
+
+        yearlyButton?.addEventListener('click', () => {
+            updatePricing(false);
+            yearlyButton.classList.add('active');
+            monthlyButton?.classList.remove('active');
+        });
+
+        // Initialize with monthly pricing
+        updatePricing(true);
+
+    </script>
   </main>
+  
