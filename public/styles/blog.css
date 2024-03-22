@@ -1,31 +1,145 @@
-/* Add the rest of your global styles here */
+.main-heading {
+  font-size: 50px; /* Large font size for the main heading */
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 0; /* Remove default margin */
+  color: white;
+  margin-bottom: 40px;
+}
 
 .blog-posts-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around; /* This will space out the cards nicely */
-  max-width: 1200px;
+  max-width: calc(60%);
   margin: auto; /* Center the container */
+}
+.blog-posts-container-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* This will space out the cards nicely */
+  max-width: calc(60%);
+  margin: auto; /* Center the container */
+  flex-direction: row; /* Align children horizontally */
+  justify-content: center; /* Align children to the start (left side) */
+  align-items: flex-start; /* Align children to the start of the cross axis */
+}
+
+.featured-post {
+  width: calc(50% - 2rem);
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* This will hide any overflow and ensure the border-radius is applied */
+  justify-content: flex-start; /* Align children to the start (left side) */
+  flex-direction: column; /* Stack children vertically */
+  margin-bottom: 50px;
+  margin-right: 50px;
+}
+
+.featured-post:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-6px);
+}
+/* Style for the container of side posts */
+.side-posts {
+  width: calc(30% - 2rem);
+  flex-direction: row;
+  gap: 20px;
+  max-width: 100%; /* Adjust to fit the container */
+  align-items: center; /* Aligns items vertically center */
+  border-radius: 10px; /* Rounded corners */
+}
+
+/* Style for individual side posts */
+.side-post {
+  align-items: center; /* Aligns items vertically center */
+  border-radius: 10px; /* Rounded corners */
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  margin-bottom: 14px;
+}
+
+.side-post-image {
+  width: 100%; /* Adjust based on your design */
+  height: auto;
+  object-fit: cover; /* Cover ensures the image covers the area */
+  float: left;
+  height: auto; /* Maintains aspect ratio */
+  border-radius: 10px;
+}
+
+.side-post:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-6px);
+}
+
+.side-post-title {
+  width: 100%; /* Remaining space for content */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  float: left;
+  font-size: 13px;
 }
 
 /* Individual Blog Post Card Styling */
 .blog-post-card {
-  width: calc(50% - 2rem); /* Subtract margin from 50% width for 2 cards in a row */
+  width: calc(20% - 2rem); /* For 3 cards in a row, minus margin */
   margin: 1rem; /* Space between cards */
-  background: rgba(0,0,0,0.2);
+  background: rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: visible; /* Allow image to show through corners if desired */
+  overflow: hidden; /* This will hide any overflow and ensure the border-radius is applied */
 }
 
+.blog-post-card:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-6px);
+}
 .blog-post-image {
   width: 100%; /* Image takes full width of card */
+  height: auto; /* Ensures the image aspect ratio is maintained */
   border-top-left-radius: 10px; /* Rounded corners top-left */
   border-top-right-radius: 10px; /* Rounded corners top-right */
+
+  display: block; /* Ensures the image is a block element */
+  background-size: cover; /* Cover ensures the aspect ratio is maintained */
+  background-position: center; /* Center the image within the element */
+}
+
+.featured-post-image {
+  border-top-left-radius: 10px; /* Rounded corners top-left */
+  border-top-right-radius: 10px; /* Rounded corners top-right */
+
+  display: block; /* Ensures the image is a block element */
+  background-size: cover; /* Cover ensures the aspect ratio is maintained */
+  background-position: center; /* Center the image within the element */
+
+  min-width: 100%;
+  width: 100%;
+  height: auto; /* Ensures the image aspect ratio is maintained */
 }
 
 .blog-post-content {
   padding: 1rem; /* Space inside the card around the content */
+}
+
+.side-post-content {
+  padding: 5px; /* Space inside the card around the content */
+  flex: 0 0 auto; /* Do not grow, do not shrink, and be automatically sized */
+  width: 50%;
+}
+
+.blog-post-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limit title to 2 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  height: auto; /* for example, based on font size */
 }
 
 /* Ensure titles don't overflow and excerpt styling */
@@ -41,83 +155,121 @@
     width: 100%; /* Full width for smaller screens */
   }
 }
-  Post Title
-  .blog-post-title {
-    font-size: 1.5rem; /* larger font size for the title */
-    margin-bottom: 0.5rem; /* space below the title */
-    color:#E4E1F8;
-    float: right;
+Post Title .blog-post-title {
+  font-size: 1.5rem; /* larger font size for the title */
+  margin-bottom: 0.5rem; /* space below the title */
+  color: #e4e1f8;
+  float: right;
+}
+
+.blog-post-title-link {
+  text-decoration: none; /* Removes the underline from the link */
+  color: inherit; /* Ensures the link color matches the title color */
+  padding: 5px;
+}
+
+/* Post Excerpt */
+.blog-post-excerpt {
+  font-size: 1rem; /* standard font size for the excerpt */
+  color: #e4e1f8;
+  /* Limit the excerpt length to prevent overflow */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Side Post Excerpt */
+.side-post-excerpt {
+  font-size: 15px; /* standard font size for the excerpt */
+  color: #e4e1f8;
+  /* Limit the excerpt length to prevent overflow */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Responsive adjustments for larger screens */
+@media (min-width: 1024px) {
+  .blog-post-card {
+    width: calc(33.333% - 2rem); /* Adjust the width for larger screens */
   }
-  
-  .blog-post-title-link {
-    text-decoration: none; /* Removes the underline from the link */
-    color: inherit; /* Ensures the link color matches the title color */
+}
+
+/* Responsive adjustments for medium screens, if needed */
+@media (max-width: 1024px) {
+  .blog-post-card {
+    width: calc(50% - 2rem); /* Two cards per row on medium screens */
   }
-  
-  /* Post Excerpt */
-  .blog-post-excerpt {
-    font-size: 1rem; /* standard font size for the excerpt */
-    color:#E4E1F8;
-    /* Limit the excerpt length to prevent overflow */
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .blog-post-card {
+    width: 100%; /* Full width for smaller screens */
   }
-  
+}
 
 /* ----------------------------------------------------------------*/
 /* ---------------------------- Global ----------------------------*/
 /* ----------------------------------------------------------------*/
 
-html, body {
-    height: 100%; 
-    flex-direction: column;
-   
-    margin: 0;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
+html,
+body {
+  height: 100%;
+  flex-direction: column;
 
-    background: rgb(45,44,50);
-    background: linear-gradient(90deg, rgba(44,51,51,1) 24%, rgba(69,165,170,1) 60%, rgba(122,176,179,1) 100%);
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
 
-    padding-top: 100px;
-    padding-bottom: 400px;
+  background: rgb(45, 44, 50);
+  background: linear-gradient(
+    90deg,
+    rgba(44, 51, 51, 1) 24%,
+    rgba(69, 165, 170, 1) 60%,
+    rgba(122, 176, 179, 1) 100%
+  );
+
+  padding-top: 100px;
+  padding-bottom: 400px;
 }
-  
+
 body > main {
-    margin: auto;
+  margin: auto;
 }
 
 main {
-    flex: 1; /* This allows the main content to grow and fill the space */
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* This centers the content vertically */
-    align-items: center; /* This centers the content horizontally */
-  }
-
-a{
-  color:#E4E1F8;
+  flex: 1; /* This allows the main content to grow and fill the space */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* This centers the content vertically */
+  align-items: center; /* This centers the content horizontally */
 }
 
-p{
-  color:#E4E1F8;
+a {
+  color: #e4e1f8;
+}
+
+p {
+  color: #e4e1f8;
 }
 
 .center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    /* width: 50%; */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  /* width: 50%; */
 }
 
-.blog-post-title-link{
-  color:#E4E1F8;
+.blog-post-title-link {
+  color: #e4e1f8;
 }
 
-.not_so_big{
+.not_so_big {
   font-size: 50px;
-  color:#E4E1F8;
+  color: #e4e1f8;
 }

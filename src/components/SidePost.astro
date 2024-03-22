@@ -1,0 +1,28 @@
+---
+import { type CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
+
+type Props = {
+  sidepost: CollectionEntry<"posts">;
+};
+
+const { sidepost } = Astro.props;
+---
+
+<article class="side-post">
+  <a href={`/blog/${sidepost.slug}`} >
+    <Image
+      src={sidepost.data.image}
+      width={500}
+      height={500 / 1.5}
+      alt={sidepost.data.title}
+      class="side-post-image"
+    />
+  </a>
+  <div class="side-post-title">
+    <a href={`/blog/${sidepost.slug}`} class="blog-post-title-link">
+      <h2 class="side-post-title">{sidepost.data.title}</h2>
+    </a>
+  </div>
+
+</article>

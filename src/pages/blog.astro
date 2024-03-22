@@ -1,13 +1,29 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import PostList from "../components/PostList.astro";
-import Post from "../components/Post.astro";
+import SidePost from "../components/SidePost.astro";
 import { getCollection } from "astro:content";
+import FeaturedPost from "../components/FeaturedPost.astro";
 
 const posts = await getCollection("posts");
+const randomIndex = Math.floor(Math.random() * posts.length);
+const featuredPost = posts[randomIndex];
 ---
 
 <Layout title="Blog | Imagefy" additionalStylesheets={["/styles/blog.css"]}>
+  <span class="main-heading">IMAGEFY | BLOG</span>
+  <div class="blog-posts-container-top">
+    {posts.length > 0 ? (
+      <FeaturedPost post={featuredPost} />
+    ) : null}
+
+    <div class="side-posts">
+        {posts.slice(1, 5).map((post) => (
+          <SidePost sidepost={post}/>
+        ))}
+    </div>
+  </div>
+
   <PostList posts={posts} />
   <br /><br /><br /><br /><br />
 </Layout>
