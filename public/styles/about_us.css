@@ -97,26 +97,6 @@ body > main {
   transform: translateY(-6px);
 }
 
-/* .some_container {
-  flex: 1;
-  padding: 2rem;
-  background: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background: rgba(0, 0, 0, 0.1);
-}
-.some_container:hover {
-  flex: 1;
-  padding: 2rem;
-  background: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: rgba(255, 255, 255, 0.1);
-  transform: translateY(-6px);
-} */
-
 .about-intro {
   text-align: center;
   margin-bottom: 2rem; /* Space between intro and story sections */

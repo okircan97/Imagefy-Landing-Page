@@ -1,0 +1,34 @@
+---
+// FeaturedPost.astro
+import { type CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
+
+type Props = {
+  post: CollectionEntry<"posts">;
+};
+
+const { post } = Astro.props;
+---
+
+<article class="featured-post">
+  <a href={`/blog/${post.slug}`} class="blog-post-image-link">
+    <Image
+      src={post.data.image}
+      width={500}
+      height={500 / 1.5}
+      alt={post.data.title}
+      class="featured-post-image"
+    />
+  </a>
+  <div class="blog-post-content">
+    <a href={`/blog/${post.slug}`} class="blog-post-title-link">
+      <h2 class="blog-post-title">{post.data.title}</h2>
+    </a>
+    <p class="blog-post-excerpt">
+      {
+        /* You may want to limit the excerpt length or use a summary field from your post data */
+      }
+      {post.body.substring(0, 500)}...
+    </p>
+  </div>
+</article>
